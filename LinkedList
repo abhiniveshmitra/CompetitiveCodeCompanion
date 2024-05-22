@@ -1,0 +1,11 @@
+struct Node {
+    int data;
+    Node* next;
+};
+
+Node* newNode(int data) {
+    Node* temp = new Node;
+    temp->data = data;
+    temp->next = nullptr;
+    return temp;
+}
