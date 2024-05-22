@@ -1,0 +1,17 @@
+int binsearch(vector<int> arr,int low,int high,int target)
+{
+    while(low<= high)
+    {
+       int mid= (high+low)/2;
+        if (arr[mid]==target)
+        return mid;
+        if (arr[mid]>target)
+        {
+            high=mid-1;
+        }
+        else
+        low=mid+1;
+
+    }
+     return -1;
+}
