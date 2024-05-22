@@ -1,0 +1,17 @@
+void level(TreeNode* root,vector<TreeNode*>& a)
+{
+    queue<TreeNode*> q;
+    q.push(root);
+    while(!q.empty())
+    {
+        TreeNode* node=st.top();
+        st.pop();
+        a.push_back(node->data)
+        if(node->left)
+        st.push(node->left);
+        else st.push();
+        if(node->right)
+        st.push(node->right);
+    }
+    return;
+}
