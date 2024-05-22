@@ -1,0 +1,40 @@
+typedef struct TreeNode{
+    int data;
+    TreeNode*  left;
+    TreeNode* right;
+    TreeNode (int data):data(data),left(nullptr),right(nullptr){}
+}TreeNode;
+vector<TreeNode*> makenodes(vector<int>& a)
+{
+    vector<TreeNode*> ans;
+    for(int i=0;i<a.size();i++)
+    {
+        if(a[i]==-1)
+        ans.push_back(nullptr);
+        else
+        ans.push_back(new TreeNode(a[i]));
+    }
+    return ans;
+}
+TreeNode* a2bt(vector<TreeNode*>& ans) {
+    if (ans.empty()) return nullptr;
+    TreeNode* root=ans[0];
+    for(int i=1;i<ans.size();i++)
+    {
+        if(i%2==0)
+        {
+            int parentindex=(i-2)/2;
+            while(ans[parentindex]==nullptr)
+            parentindex++;
+            ans[parentindex]->right=ans[i];
+        }
+        if(i%2==1)
+        {
+            int parentindex=(i-1)/2;
+            while(ans[parentindex]==nullptr)
+            parentindex++;
+            ans[parentindex]->left=ans[i];
+        }
+    }
+    return root;
+}
