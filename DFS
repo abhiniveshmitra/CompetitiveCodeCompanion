@@ -1,0 +1,10 @@
+void dfs(int source,vector<int>& vis,vector<vector<int>>& list)
+{
+    vis[source]=1;
+    for(int& it: list[source])
+    {
+        if(vis[it]==0)
+        dfs(it,vis,list);
+    }
+    return;
+}
