@@ -1,0 +1,39 @@
+#include <iostream>
+#include <vector>
+#include <unordered_set>
+
+// define a hash function for vector<int>
+struct VectorHash {
+    size_t operator()(const std::vector<int>& v) const {
+        size_t hash = 0;
+        for (int i : v) {
+            hash = hash * 31 + i;
+        }
+        return hash;
+    }
+};
+
+int main() {
+    std::vector<std::vector<int>> v = {{1, 2, 3}, {4, 5, 6}, {1, 2, 3}, {7, 8, 9}};
+
+    // create an unordered_set of vector<int> using the custom hash function
+    std::unordered_set<std::vector<int>, VectorHash> hash_table;
+
+    // insert vectors into the hash table
+    for (const auto& vec : v) {
+        hash_table.insert(vec);
+    }
+
+    // print the size of the hash table
+    std::cout << "Hash table size: " << hash_table.size() << std::endl;
+
+    // check if a vector is in the hash table
+    std::vector<int> search_vec = {1, 2, 3};
+    if (hash_table.find(search_vec) != hash_table.end()) {
+        std::cout << "Vector found in hash table" << std::endl;
+    } else {
+        std::cout << "Vector not found in hash table" << std::endl;
+    }
+
+    return 0;
+}
