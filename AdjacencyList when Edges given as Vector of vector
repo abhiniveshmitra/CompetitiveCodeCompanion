@@ -1,0 +1,9 @@
+vector<vector<int>> adjlist(vector<vector<int>>& edges,int n)
+{
+    vector<vector<int>> list(n);
+    for(auto it : edges)
+        list[it[0]].push_back(it[1]);
+        list[it[1]].push_back(it[0]);
+
+    return list;
+}
