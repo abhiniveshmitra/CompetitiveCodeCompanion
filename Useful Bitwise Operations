@@ -1,0 +1,8 @@
+1) check if no. is odd   X&1==1;
+2)check if kth bit is set  (X>>k)%1==1;
+3)flip kth bit X=X^(1<<k);
+4) set or unset using AND OR X=X|(1<<k); X=X & ~(1<<k);
+5)coutn set bits  __buitlin_popcountll
+6)check if a number is power of 2 X &(X-1)==0
+7) A+B= A|B + A&B;
+8) largest power of 2 which divides a number X & -X;
