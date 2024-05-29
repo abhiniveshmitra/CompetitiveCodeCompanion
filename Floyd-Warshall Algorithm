@@ -1,0 +1,35 @@
+vector<vector<int>> matrix( vector<vector<int>> &edges,int n)
+{
+    vector<vector<int>> adj(n,vector<int>(n,1e9));
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            if(i==j)adj[i][j]=0;
+        }
+    }
+    for(auto& it:edges)
+    {
+    int u=it[0];
+    int v=it[1];
+    int wt=it[2];
+    adj[u][v]=wt;
+    }
+    return adj;
+}
+int floydWarshall(int n, int m, int src, int dest, vector<vector<int>> &edges) {
+    n++;
+    vector<vector<int>>mat=matrix(edges, n);
+    for(int via=0;via<n;via++)
+    {
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                if(mat[i][via]==1e9 || mat[via][j]==1e9)continue;
+                mat[i][j]=min(mat[i][j],mat[i][via]+mat[via][j]);
+            }
+        }
+    }
+    return mat[src][dest];
+}
