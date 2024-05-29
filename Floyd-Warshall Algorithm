@@ -32,4 +32,4 @@ int floydWarshall(int n, int m, int src, int dest, vector<vector<int>> &edges) {
         }
     }
     return mat[src][dest];
-}
+}//detect negative cycle by checking if node to same node distance leass than 0
