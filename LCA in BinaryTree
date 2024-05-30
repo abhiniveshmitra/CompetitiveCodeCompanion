@@ -1,0 +1,14 @@
+TreeNode<int> *lca(TreeNode<int> *root,  int x, int y) {
+     if(!root ||root->data==x|| root->data==y)
+     return root;
+TreeNode<int>* lef=lca(root->left,x,y);
+TreeNode<int>* righ=lca(root->right,x,y);
+if(!lef)return righ;
+else if(!righ) return lef;
+else return root;
+
+ }
+int lowestCommonAncestor(TreeNode<int> *root, int x, int y)
+{
+	return (lca(root,x,y)->data);
+}
