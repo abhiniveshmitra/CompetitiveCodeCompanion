@@ -17,7 +17,7 @@ int maxProfit(vector<int> &values, vector<int> &weights, int n, int w)
 		{
 			if(weights[i-1]<=j)
 			{
-				t[i][j]=max(t[i-1][j],values[i-1]+t[i-1][j-weights[i-1]]);
+				t[i][j]=max(t[i-1][j],values[i-1]+t[i-1][j-weights[i-1]]);//for unbounded knapsack just change t[i-1][j-weights[i-1]] to t[i][j-weights[i-1]]
 			}
 			else
 			t[i][j]=t[i-1][j];
