@@ -1,0 +1,19 @@
+int perfectSum(vector<int>& arr, int n, int target)
+	{
+        
+        long long int modu=1e9+7;
+        long long int t[n+1][target+1];
+        memset(t, 0, sizeof(t));
+        t[0][0]=1;
+        for(int i=1;i<=n;i++)
+        {
+            for(int j=0;j<=target;j++)
+            {
+                if(arr[i-1]<=j)
+                t[i][j]=(t[i-1][j]+t[i-1][j-arr[i-1]])%modu;
+                
+                else t[i][j]=t[i-1][j]%modu;
+            }
+        }
+        return static_cast<int>(t[n][target]) ;
+	}
