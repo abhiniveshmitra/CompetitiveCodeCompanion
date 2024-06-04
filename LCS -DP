@@ -15,3 +15,30 @@ int longestCommonSubsequence(string str1, string str2) {
         }
         
         return t[n][m];
+
+
+code for printLCS
+
+string findLCS(int n, int m,string &str1, string &str2){
+	vector<vector<pair<int,string>>> t(n+1,vector<pair<int,string>>(m+1,{0,""}));
+	for(int i=1;i<=n;i++)
+	{
+		for(int j=1;j<=m;j++)
+		{
+			if(str1[i-1]==str2[j-1])
+			{
+				t[i][j]={1+t[i-1][j-1].first,t[i-1][j-1].second+str1[i-1]};
+			}
+			else
+			{
+				string s=t[i][j-1].second;
+				if(t[i-1][j].second.size() >= t[i][j-1].second.size())
+				s=t[i-1][j].second;
+					t[i][j]={max(t[i-1][j].first,t[i][j-1].first),s};
+			}
+			
+		}
+		
+	}	
+	return t[n][m].second;
+}
