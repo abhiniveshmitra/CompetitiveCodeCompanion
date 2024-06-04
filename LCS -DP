@@ -15,7 +15,7 @@ int longestCommonSubsequence(string str1, string str2) {
         }
         
         return t[n][m];
-
+}
 
 code for printLCS
 
