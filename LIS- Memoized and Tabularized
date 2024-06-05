@@ -1,0 +1,31 @@
+int helper(int index,int prev,vector<int>& nums,int n, int t[2502][2502])
+    {
+        if(t[index][prev+1]!=-1)return t[index][prev+1];
+        if(index==n)return t[index][prev+1]=0;
+        if(  prev==-1 || (prev>=0 && nums[index]>nums[prev]))
+        return t[index][prev+1] = max(1+helper(index+1,index,nums,n,t),helper(index+1,prev,nums,n,t));
+        else
+        return t[index][prev+1] = helper(index+1,prev,nums,n,t);
+    }
+    int lengthOfLIS(vector<int>& nums) {
+        int n=nums.size();
+        int t[2502][2502];
+        memset(t,-1,sizeof(t));
+        return helper(0,-1,nums,n,t);
+    }
+
+
+//tabular
+vector<int> longestIncreasingSubsequence(vector<int>& nums) {
+    int n = nums.size();
+    vector<int> dp(n, 1);
+    for(int i = 1; i < n; i++) {
+        for(int j = 0; j < i; j++) {
+            if(nums[i] > nums[j] && dp[j] + 1 > dp[i]) {
+                dp[i] = dp[j] + 1;
+            }
+        }
+    }
+    int lis = *max_element(dp.begin(), dp.end());
+    return lis;
+}
