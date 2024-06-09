@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+#include <stdlib.h>
+using namespace std;
+
+// Next 4 lines does the Magic
+#define DEBUG(x...) { cout << "(" << #x << ")" << " = ( "; Print(x); }
+template <typename T1> void Print(T1 t1) { cout << t1 << " )" << endl; }
+template <typename T1, typename... T2>
+void Print(T1 t1, T2... t2) { cout << t1 << " , "; Print(t2...); }
+
+int main() {
+    vector<int> nums = {1, 2, 3, 4, 5};
+    int target = 3;
+    // Use DEBUG to print variables
+    DEBUG(nums);
+    DEBUG(target);
+    // Rest of your code...
+    return 0;
+}
