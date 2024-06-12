@@ -1,4 +1,4 @@
-int binsearch(vector<int> arr,int low,int high,int target)
+int binsearch(vector<int>& arr,int low,int high,int target)
 {
     while(low<= high)
     {
