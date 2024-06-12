@@ -5,7 +5,7 @@ int binsearch(vector<int>& arr,int low,int high,int target)
        int mid= low+ (high-low)/2;
         if (arr[mid]==target)
         return mid;
-        if (arr[mid]>target)
+      else  if (arr[mid]>target)
         {
             high=mid-1;
         }
