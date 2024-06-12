@@ -1,0 +1,43 @@
+
+    bool feasible(vector<int>& nums, int k,int n,int mid)
+    {
+        int parts=1;
+        int capa=mid;
+        for(int i=0;i<n;i++)
+        {
+            if(capa>=nums[i])
+            {
+                capa-=nums[i];
+                continue;
+            }
+            else
+            {
+                parts++;
+                capa=mid;
+                capa-=nums[i];
+            }
+        }
+        return parts<=k;
+    }
+    long long binsearch(vector<int>& arr,int low,int high,int k,int n)
+{
+    long long ans=-1;
+    while(low<= high)
+    {
+       long long mid= low+(high-low)/2;
+        if (feasible(arr,k,n,mid))
+        
+        {
+            ans=mid;
+            high =mid-1;
+        }
+      
+        else
+        low=mid+1;
+
+    }
+     return ans;
+}
+    int splitArray(vector<int>& nums, int k) {
+        return binsearch(nums,*max_element(nums.begin(),nums.end()),accumulate(nums.begin(),nums.end(),0),k,nums.size());
+    }
