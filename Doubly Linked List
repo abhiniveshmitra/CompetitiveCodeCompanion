@@ -1,0 +1,83 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Node{
+public:
+    Node* prev;
+    int data;
+    Node* next;
+ 
+    Node()
+    { 
+        prev = NULL; 
+        data = 0;
+        next = NULL;
+    }
+    
+    Node(int value)
+    { 
+        prev = NULL; 
+        data = value;
+        next = NULL;
+    }
+};
+
+
+
+class Node{
+public:
+    Node* prev;
+    int data;
+    Node* next;
+ 
+    Node()
+    { 
+        prev = NULL; 
+        data = 0;
+        next = NULL;
+    }
+    
+    Node(int value)
+    { 
+        prev = NULL; 
+        data = value;
+        next = NULL;
+    }
+};*/
+
+class Solution {
+  public:
+    Node* constructDLL(vector<int>& arr) {
+        
+        int n=arr.size();
+        vector<Node*> dll(n);
+        for(int i=0;i<n;i++)
+        dll[i]=new Node(arr[i]);
+        for(int i=1;i<n;i++)
+        dll[i]->prev=dll[i-1];
+        for(int i=0;i<n-1;i++)
+        dll[i]->next=dll[i+1];
+        return dll[0];
+    }
+};
+
+
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int n;
+        cin >> n;
+        vector<int> arr(n);
+        for (int i = 0; i < n; i++) cin >> arr[i];
+        Solution obj;
+        Node* ans = obj.constructDLL(arr);
+        while (ans) {
+            cout << ans->data << " ";
+            ans = ans->next;
+        }
+        cout << "\n";
+    }
+    return 0;
+}
