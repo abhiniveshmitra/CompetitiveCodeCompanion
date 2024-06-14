@@ -1,0 +1,28 @@
+ode* sortedMerge(Node* head1, Node* head2)  
+{  
+    if(!head1)return head2;
+    if(!head2)return head1;
+    Node* dummy=new Node(-2);
+    Node* temp1=head1;
+    Node* temp2=head2;
+    Node* trav=dummy;
+    while(temp1 && temp2)
+    {
+        if(temp1->data<=temp2->data)
+        {
+            trav->next=temp1;
+            temp1=temp1->next;
+            trav=trav->next;
+        }
+        else
+        {
+            trav->next=temp2;
+            temp2=temp2->next;
+            trav=trav->next;
+        }
+    }
+    if(temp1)trav->next=temp1;
+    else trav->next=temp2;
+    return dummy->next;
+    
+}
