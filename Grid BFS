@@ -1,8 +1,8 @@
 #include<queue>
 void bfs(int row, int col, vector<vector<int>> &vis, vector<vector<int>> &maze,int n,int m) {
-  vis[row][col] = 1;
-  queue < pair< int, int >> q;
-  q.push({row, col});
+  vis[row][col]=1;
+  queue <pair<int,int>> q;
+  q.push({row,col});
 
     int dr[]={-1,0,1,0};
     int dc[]={0,-1,0,1};
