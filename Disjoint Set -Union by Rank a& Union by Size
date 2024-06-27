@@ -3,8 +3,9 @@ using namespace std;
 
 
 class disjointset {
-    vector<int> rank, parent, size;
+  
 public:
+      vector<int> rank, parent, size;
     disjointset(int n) {
         rank.resize(n + 1, 0);
         parent.resize(n + 1);
