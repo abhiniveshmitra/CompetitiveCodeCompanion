@@ -5,7 +5,7 @@ vector<vector<pair<int,int>>> adjlist(vector<vector<int>>& edges,int n)
    {
     int u=it[0];
     int v=it[1];
-    int wt=[2];
+    int wt=it[2];
     list[u].push_back({v,wt});
    }
    return list;
@@ -24,12 +24,13 @@ while(!q.empty())
     q.pop();
     for(auto& x : list [node])
     {
-        if(distance +x.second <dist[x.first])
+        int adj_node=x.first;
+        int adj_dist=x.second;
+        if(distance +adj_dist <dist[adj_node])
        {
-        dist[x.first]=distance +x.second;
-        q.push({dist[x.first],x.first});
+        dist[adj_node]=distance +adj_dist;
+        q.push({dist[adj_node],adj_node});
        }
     }
 }
 return ;
-}
