@@ -1,0 +1,19 @@
+void bfs(int src,vector<vector<int>>& list,vector<int>& vis)
+{
+    vis[src]=1;
+    queue<int> q;
+    q.push(src);
+    while(!q.empty())
+    {
+     auto it=q.front();
+     q.pop();
+     for(int& it:list[node])
+     {
+        if(vis[adj]==0)
+        {
+            vis[adj]=1;
+            q.push(adj);
+        }
+     }
+    }
+}
