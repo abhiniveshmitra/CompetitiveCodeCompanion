@@ -5,9 +5,9 @@ void bfs(int src,vector<vector<int>>& list,vector<int>& vis)
     q.push(src);
     while(!q.empty())
     {
-     auto it=q.front();
+     auto node=q.front();
      q.pop();
-     for(int& it:list[node])
+     for(int& adj:list[node])
      {
         if(vis[adj]==0)
         {
