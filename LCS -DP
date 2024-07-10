@@ -1,4 +1,4 @@
-int longestCommonSubsequence(string str1, string str2) {
+int lcs(string str1, string str2) {
         int n=str1.size();
         int m=str2.size();
         int t[n+1][m+1];
