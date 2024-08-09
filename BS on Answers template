@@ -19,12 +19,12 @@
         }
         return parts<=k;
     }
-    long long binsearch(vector<int>& arr,int low,int high,int k,int n)
+   lli binsearch(vector<int>& arr,int low,int high,int k,int n)
 {
-    long long ans=-1;
+    lli ans=-1;
     while(low<= high)
     {
-       long long mid= low+(high-low)/2;
+       lli mid= low+(high-low)/2;
         if (feasible(arr,k,n,mid))
         
         {
