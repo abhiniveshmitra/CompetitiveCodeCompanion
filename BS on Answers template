@@ -38,6 +38,4 @@
     }
      return ans;
 }
-    int splitArray(vector<int>& nums, int k) {
-        return binsearch(nums,*max_element(nums.begin(),nums.end()),accumulate(nums.begin(),nums.end(),0),k,nums.size());
-    }
+   
