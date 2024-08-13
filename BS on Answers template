@@ -1,41 +1,23 @@
 
-    bool feasible(vector<int>& nums, int k,int n,int mid)
+    bool feasible(vector<lli>& a, lli k,lli n,lli mid)
     {
-        int parts=1;
-        int capa=mid;
-        for(int i=0;i<n;i++)
-        {
-            if(capa>=nums[i])
-            {
-                capa-=nums[i];
-                continue;
-            }
-            else
-            {
-                parts++;
-                capa=mid;
-                capa-=nums[i];
-            }
-        }
-        return parts<=k;
-    }
-   lli binsearch(vector<int>& arr,int low,int high,int k,int n)
-{
-    lli ans=-1;
-    while(low<= high)
-    {
-       lli mid= low+(high-low)/2;
-        if (feasible(arr,k,n,mid))
         
+    }
+ lli bs(vector<lli>& a, vector<lli>& b,lli n,vector<lli>& poorer,vector<lli>& richer)
+{
+    lli low=1;
+    lli high=n;
+    lli ans=low;
+    while(low<=high)
+    {
+        lli mid=(low+high)/2;
+        if(feasible(a,b,n,mid,poorer,richer))
         {
             ans=mid;
-            high =mid-1;
+            low=mid+1;
         }
-      
-        else
-        low=mid+1;
-
+        else high=mid-1;
     }
-     return ans;
+    return ans;
 }
    
