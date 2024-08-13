@@ -3,7 +3,7 @@
     {
         
     }
- lli bs(vector<lli>& a, vector<lli>& b,lli n,vector<lli>& poorer,vector<lli>& richer)
+ lli bs(vector<lli>& a, vector<lli>& b,lli n)
 {
     lli low=1;
     lli high=n;
