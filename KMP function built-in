@@ -1,6 +1,3 @@
-bool rotateString(string s, string goal) {
-        string t=s+s;
-        if(s.size()!=goal.size())return false;
-        int n=goal.size();
+
        return (s + s).find(goal) != string::npos;
-    }
+    
