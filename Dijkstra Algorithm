@@ -11,7 +11,7 @@ vector<vector<pair<lli,lli>>> adjlist(vector<vector<lli>>& edges,lli n)
    return list;
 
 }
-void bfs(int source,vector<lli>& dist,vector<vector<pair<lli,lli>>>& list)
+void bfs(lli source,vector<lli>& dist,vector<vector<pair<lli,lli>>>& list)
 {
 priority_queue<pair<lli,lli>, vector<pair<lli,lli>>, greater<pair<lli,lli>>> q;
 q.push({0,source});
