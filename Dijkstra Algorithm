@@ -1,11 +1,11 @@
 vector<vector<pair<lli,lli>>> adjlist(vector<vector<lli>>& edges,lli n)
 {
-    vector<vector<pair<int,int>>> list(n+1);
+    vector<vector<pair<lli,lli>>> list(n+1);
    for(auto& it :edges)
    {
-    int u=it[0];
-    int v=it[1];
-    int wt=it[2];
+    auto u=it[0];
+    auto v=it[1];
+    auto wt=it[2];
     list[u].push_back({v,wt});
    }
    return list;
