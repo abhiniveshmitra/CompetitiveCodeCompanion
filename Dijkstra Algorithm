@@ -1,6 +1,6 @@
 vector<vector<pair<lli,lli>>> adjlist(vector<vector<lli>>& edges,lli n)
 {
-    vector<vector<pair<int,int>>> list(n);
+    vector<vector<pair<int,int>>> list(n+1);
    for(auto& it :edges)
    {
     int u=it[0];
