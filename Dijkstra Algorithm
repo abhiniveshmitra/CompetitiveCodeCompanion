@@ -1,4 +1,4 @@
-vector<vector<pair<int,int>>> adjlist(vector<vector<int>>& edges,int n)
+vector<vector<pair<lli,lli>>> adjlist(vector<vector<lli>>& edges,lli n)
 {
     vector<vector<pair<int,int>>> list(n);
    for(auto& it :edges)
@@ -11,21 +11,21 @@ vector<vector<pair<int,int>>> adjlist(vector<vector<int>>& edges,int n)
    return list;
 
 }
-void bfs(int source,vector<int>& dist,vector<vector<pair<int,int>>>& list)
+void bfs(int source,vector<lli>& dist,vector<vector<pair<lli,lli>>>& list)
 {
-priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> q;
+priority_queue<pair<lli,lli>, vector<pair<lli,lli>>, greater<pair<lli,lli>>> q;
 q.push({0,source});
 dist[source]=0;
 while(!q.empty())
 {
     auto& it= q.top();
-    int distance=it.first;
-    int node=it.second;
+    auto distance=it.first;
+    auto node=it.second;
     q.pop();
     for(auto& x : list [node])
     {
-        int adj_node=x.first;
-        int adj_dist=x.second;
+        auto adj_node=x.first;
+        auto adj_dist=x.second;
         if(distance +adj_dist <dist[adj_node])
        {
         dist[adj_node]=distance +adj_dist;
