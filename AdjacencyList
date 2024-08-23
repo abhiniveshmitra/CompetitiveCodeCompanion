@@ -1,6 +1,6 @@
 vector<vector<lli>> adjlist(vector<vector<lli>>& edges,lli n)
 {
-    vector<vector<lli>> list(n);
+    vector<vector<lli>> list(n+1);
     for(auto& it : edges)
 {
      list[it[0]].push_back(it[1]);
