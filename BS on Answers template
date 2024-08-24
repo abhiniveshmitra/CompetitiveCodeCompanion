@@ -1,8 +1,7 @@
+bool feasible(vector<lli>& a, lli k,lli n,lli mid)
+{
 
-    bool feasible(vector<lli>& a, lli k,lli n,lli mid)
-    {
-        
-    }
+}
  lli bs(vector<lli>& a, vector<lli>& b,lli n)
 {
     lli low=1;
