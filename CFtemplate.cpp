@@ -21,7 +21,7 @@ void Print(T1 t1, T2... t2) { cout << t1 << " , "; Print(t2...); }
 #define br cout << endl
 #define clrscr() cout << "\033[H\033[J"
 #define MOD(a, b) (((a) % (b) + (b)) % (b))
-#define pii pair<int, int>
+#define pll pair<lli, lli>
 #define FAST_IO ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
 #define ub(x,t) upper_bound(all(x),t)
 #define lb(x,t) lower_bound(all(x),t)
