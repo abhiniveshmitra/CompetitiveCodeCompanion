@@ -47,4 +47,7 @@ public:
             size[ulp_u] += size[ulp_v];
         }
     }
+bool same(lli u, lli v) {
+        return findUPar(u) == findUPar(v);
+    }
 };
