@@ -1,7 +1,7 @@
-void dfs(int source,vector<int>& vis,vector<vector<int>>& list)
+void dfs(lli source,vector<lli>& vis,vector<vector<lli>>& list)
 {
     vis[source]=1;
-    for(int& it: list[source])
+    for(auto& it: list[source])
     {
         if(vis[it]==0)
         dfs(it,vis,list);
