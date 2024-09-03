@@ -1,13 +1,13 @@
-void bfs(int src,vector<vector<int>>& list,vector<int>& vis)
+void bfs(lli src,vector<vector<lli>>& list,vector<lli>& vis)
 {
     vis[src]=1;
-    queue<int> q;
+    queue<lli> q;
     q.push(src);
     while(!q.empty())
     {
      auto node=q.front();
      q.pop();
-     for(int& adj:list[node])
+     for(auto& adj:list[node])
      {
         if(vis[adj]==0)
         {
