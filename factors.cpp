@@ -11,7 +11,7 @@ vector<lli> factors(lli n)
                 n/=i;
                 ct++;
             }
-            facs.pb(ct);
+            facs.pb(power(i,ct));
         }
     }
     if(n>1)
