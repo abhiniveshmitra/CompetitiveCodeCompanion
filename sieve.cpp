@@ -2,7 +2,7 @@ vector<lli> sieve(lli n)
 {
 vector<lli> prime(n+1,1);
 prime[0]=prime[1]=0;
-for(lli i=2;i<=n;i++)
+for(lli i=2;i*i<=n;i++)
 {
     if(prime[i])
     {
