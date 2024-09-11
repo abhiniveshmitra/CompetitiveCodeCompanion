@@ -1,10 +1,10 @@
 void dfs(lli source,vector<lli>& vis,vector<vector<lli>>& list)
 {
     vis[source]=1;
-    for(auto& it: list[source])
+    for(auto& adj: list[source])
     {
-        if(vis[it]==0)
-        dfs(it,vis,list);
+        if(!vis[adj])
+        dfs(adj,vis,list);
     }
     return;
 }
