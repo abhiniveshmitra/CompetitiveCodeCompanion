@@ -1,3 +1,4 @@
+int MAXN=100001;
 vector<lli> fact(MAXN + 1), invFact(MAXN + 1);
 void precomputeFactorials() {
     fact[0] = invFact[0] = 1;
