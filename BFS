@@ -1,18 +1,19 @@
 void bfs(lli src,vector<vector<lli>>& list,vector<lli>& vis)
 {
     vis[src]=1;
-    queue<lli> q;
-    q.push(src);
+    queue<pll> q;
+    q.push({src,0});
     while(!q.empty())
     {
-     auto node=q.front();
+     auto node=q.front().ff;
+     auto lvl=q.front().ss;
      q.pop();
      for(auto& adj:list[node])
      {
-        if(vis[adj]==0)
+        if(!vis[adj])
         {
             vis[adj]=1;
-            q.push(adj);
+            q.push({adj,lvl+1});
         }
      }
     }
