@@ -1,4 +1,4 @@
-void dfs(lli source,vector<lli>& vis,vector<vector<lli>>& list)
+void dfs(ll source,vector<ll>& vis,vector<vector<ll>>& list)
 {
     vis[source]=1;
     for(auto& adj: list[source])
