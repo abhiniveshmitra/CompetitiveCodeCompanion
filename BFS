@@ -1,4 +1,4 @@
-void bfs(lli src,vector<vector<lli>>& list,vector<lli>& vis)
+void bfs(ll src,vector<vector<ll>>& list,vector<ll>& vis)
 {
     vis[src]=1;
     queue<pll> q;
