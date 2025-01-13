@@ -1,6 +1,6 @@
-vector<lli> prefix(vector<lli>& a,int n)
+vector<ll> prefix(vector<ll>& a,int n)
 {
-    vector<lli> pre(n);
+    vector<ll> pre(n);
     pre[0]=a[0];
     for(int i=1;i<n;i++)
     {
