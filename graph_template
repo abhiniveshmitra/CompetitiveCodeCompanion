@@ -1,0 +1,15 @@
+void solve()
+{
+    ll n,m,k;
+    ci(n);ci(m);
+    vector<vector<ll>> list(n);
+    vector<ll> vis(n,0),ans;
+    fo(i,m)
+    {
+        ll x,y;
+        ci(x);ci(y);
+        x--;y--;
+        list[x].pb(y);
+        list[y].pb(x);
+    }
+}
