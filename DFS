@@ -1,7 +1,7 @@
-void dfs(ll source,vector<ll>& vis,vector<vector<ll>>& list)
+void dfs(ll src,vector<ll>& vis,vector<vector<ll>>& list)
 {
-    vis[source]=1;
-    for(auto& adj: list[source])
+    vis[src]=1;
+    for(auto& adj: list[src])
     {
         if(!vis[adj])
         dfs(adj,vis,list);
