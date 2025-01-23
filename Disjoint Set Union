@@ -1,26 +1,26 @@
 class disjointset {
-  
+
 public:
-      vector<lli> rank, parent, size;
-    disjointset(lli n) {
+      vector<ll> rank, parent, size;
+    disjointset(ll n) {
         rank.resize(n + 1, 0);
         parent.resize(n + 1);
         size.resize(n + 1);
-        for (lli i = 0; i <= n; i++) {
+        for (ll i = 0; i <= n; i++) {
             parent[i] = i;
             size[i] = 1;
         }
     }
 
-    lli findUPar(lli node) {
+    ll findUPar(ll node) {
         if (node == parent[node])
             return node;
         return parent[node] = findUPar(parent[node]);
     }
 
-    void unionByRank(lli u, lli v) {
-        lli ulp_u = findUPar(u);
-        lli ulp_v = findUPar(v);
+    void unionByRank(ll u, ll v) {
+        ll ulp_u = findUPar(u);
+        ll ulp_v = findUPar(v);
         if (ulp_u == ulp_v) return;
         if (rank[ulp_u] < rank[ulp_v]) {
             parent[ulp_u] = ulp_v;
@@ -34,7 +34,7 @@ public:
         }
     }
 
-    void unionBySize(lli u, lli v) {
+    void unionBySize(ll u, ll v) {
         int ulp_u = findUPar(u);
         int ulp_v = findUPar(v);
         if (ulp_u == ulp_v) return;
@@ -47,7 +47,7 @@ public:
             size[ulp_u] += size[ulp_v];
         }
     }
-bool same(lli u, lli v) {
+bool same(ll u, ll v) {
         return findUPar(u) == findUPar(v);
     }
 };
