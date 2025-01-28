@@ -1,16 +1,4 @@
-vector<vector<pair<lli,lli>>> adjlist(vector<vector<lli>>& edges,lli n)
-{
-    vector<vector<pair<lli,lli>>> list(n+1);
-   for(auto& it :edges)
-   {
-    auto u=it[0];
-    auto v=it[1];
-    auto wt=it[2];
-    list[u].push_back({v,wt});
-   }
-   return list;
 
-}
 void bfs(lli source,vector<lli>& dist,vector<vector<pair<lli,lli>>>& list)
 {
 priority_queue<pair<lli,lli>, vector<pair<lli,lli>>, greater<pair<lli,lli>>> q;
@@ -21,6 +9,7 @@ while(!q.empty())
     auto& it= q.top();
     auto distance=it.first;
     auto node=it.second;
+    if(distance>dist[node])continue;
     q.pop();
     for(auto& x : list [node])
     {
