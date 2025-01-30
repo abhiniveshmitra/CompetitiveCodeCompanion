@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-typedef long long int lli;
+typedef long long int ll;
 typedef long double lld;
-lli modu = (lli)1e9+7;
+lli modu = (ll)1e9+7;
 #define DEBUG(x...) { cout << "(" << #x << ")" << " = ( "; Print(x); }
 template <typename T1> void Print(T1 t1) { cout << t1 << " )" << endl; }
 template <typename T1, typename... T2>
@@ -29,9 +29,9 @@ mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 lli getno(lli l, lli r) {return uniform_int_distribution<lli>(l, r)(rng);}
 void solve()
 {
-    lli n;
+    ll n;
     ci(n);
-    vector<lli> a(n);
+    vector<ll> a(n);
     fo(i,n) ci(a[i]);
 }
 int main() {
