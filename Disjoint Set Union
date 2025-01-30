@@ -15,15 +15,16 @@ void unite(ll u,ll v)
 {
     u=find_par(u);
     v=find_par(v);
+if(u==v)return;
     if(dsu_rank[u]!= dsu_rank[v])
     {
         if(dsu_rank[u]>dsu_rank[v])swap(u,v);
-        parent[u]=parent[v];
+        parent[u]=v;
     }
     else
     {
         dsu_rank[v]++;
-        parent[u]=parent[v];
+        parent[u]=v;
     }
 }
 
