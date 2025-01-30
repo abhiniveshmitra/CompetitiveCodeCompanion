@@ -1,5 +1,11 @@
-vector<ll> rank(n,0),parent(n);
-for(ll i=0;i<n;i++)parent[i]=i;
+vector<ll> dsu_rank,parent;
+void initialize(ll n)
+{
+    parent.assign(n,0);
+    dsu_rank.assign(n,0);
+    for(int i=0;i<n;i++)parent[i]=i;
+}
+
 ll find_par(ll u)
 {
     if(parent[u]==u)return u;
@@ -9,14 +15,14 @@ void unite(ll u,ll v)
 {
     u=find_par(u);
     v=find_par(v);
-    if(rank[u]!= rank[v])
+    if(dsu_rank[u]!= dsu_rank[v])
     {
-        if(rank[u]>rank[v])swap(u,v);
+        if(dsu_rank[u]>dsu_rank[v])swap(u,v);
         parent[u]=parent[v];
     }
     else
     {
-        rank[v]++;
+        dsu_rank[v]++;
         parent[u]=parent[v];
     }
 }
