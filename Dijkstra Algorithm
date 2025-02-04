@@ -8,8 +8,8 @@ while(!q.empty())
     auto& it= q.top();
     auto distance=it.first;
     auto node=it.second;
-    if(distance>dist[node])continue;
     q.pop();
+    if(distance>dist[node])continue;
     for(auto& x : list [node])
     {
         auto adj_node=x.first;
