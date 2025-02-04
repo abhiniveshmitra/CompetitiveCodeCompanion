@@ -1,7 +1,6 @@
-
-void bfs(lli source,vector<lli>& dist,vector<vector<pair<lli,lli>>>& list)
+void bfs(ll source,vector<ll>& dist,vector<vector<pair<ll,ll>>>& list)
 {
-priority_queue<pair<lli,lli>, vector<pair<lli,lli>>, greater<pair<lli,lli>>> q;
+priority_queue<pair<ll,ll>, vector<pair<ll,ll>>, greater<pair<ll,ll>>> q;
 q.push({0,source});
 dist[source]=0;
 while(!q.empty())
