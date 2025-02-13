@@ -1,29 +1,28 @@
+void bfs(ll row, ll col, vector<vector<ll>> &maze) {
+    ll n=maze.size();
+          ll m=maze[0].size();
+          vector<vector<ll>>vis(n,vector<ll>(m,0));
+    vis[row][col]=1;
+    queue <pair<ll,ll>> q;
+    q.push({row,col});
 
-void bfs(int row, int col, vector<vector<int>> &maze) {
-  int n=maze.size();
-        int m=maze[0].size();
-        vector<vector<int>>vis(n,vector<int>(m,0));
-  vis[row][col]=1;
-  queue <pair<int,int>> q;
-  q.push({row,col});
+      ll dr[]={-1,0,1,0};
+      ll dc[]={0,-1,0,1};
+      while(!q.empty())
+      {
+          ll r=q.front().first;
+          ll c=q.front().second;
+      q.pop();
+  for(ll i=0;i<4;i++)
+      {
+          ll nr=r+dr[i];
+          ll nc=c+dc[i];
+          if(nr>=0 && nc>=0 && nr<n && nc<m && vis[nr][nc]==0 && maze[nr][nc]==1)
+          {
+              q.push({nr,nc});
+              vis[nr][nc]=1;
+          }
+      }
+      }
 
-    int dr[]={-1,0,1,0};
-    int dc[]={0,-1,0,1};
-    while(!q.empty())
-    {
-        int r=q.front().first;
-        int c=q.front().second;
-    q.pop();
-for(int i=0;i<4;i++)
-    {
-        int nr=r+dr[i];
-        int nc=c+dc[i];
-        if(nr>=0 && nc>=0 && nr<n && nc<m && vis[nr][nc]==0 && maze[nr][nc]==1)
-        {
-            q.push({nr,nc});
-            vis[nr][nc]=1;
-        }
-    }
-    }
-    
-}
+  }
